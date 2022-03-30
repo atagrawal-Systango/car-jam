@@ -1,0 +1,629 @@
+.startScreen{
+     
+    height: 80px;
+    font: italic small-caps bold 16px/2 cursive;
+    color:wheat;
+    text-align: center;
+    justify-content: center;
+   
+     
+   
+}
+#message{
+
+    font: italic small-caps bold 16px/2 cursive;
+    top: 90px;
+    margin-left: 990px;
+    text-shadow: 5px 5px 10px #e09797;
+    font-size: 0.5em;
+}
+p{
+    color: wheat;
+}
+h3{
+    
+    color:wheat;
+    font-style: italic;
+   
+
+
+
+}
+body{
+    /* margin-right: 40px; */
+    overflow: hidden;
+    /* background-image: url(./tumblr_inline_mw5iqkPFmO1qz62bd540.gif); */
+    background-image: url(../IMAGE/background.jpeg);
+    background-size: cover;
+    /* background-attachment: fixed;
+    background-repeat: no-repeat; */
+}
+  
+#style{
+     
+    width: 300px;
+}
+#style1{
+    margin-right: 10px;
+    width: 100px;
+   
+   
+}
+
+.hide{ display: none;}
+ .moves
+{
+   
+
+    position: fixed;
+    width: 200px;
+    top: 0px;
+    /* right: 10px; */
+    left: 500px;                                                                                                                                            
+    widows: 300px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    font-family: fantasy;
+    
+    
+
+
+}
+.game{
+    width: 400px;
+    height: 400px;
+    background-color: #7B7D7D;
+    margin:auto;
+    /* padding-right: 0%; */
+    margin-top: 50px;
+    position:relative;
+    
+    
+}
+
+/* .leftRoad{
+    background-color: #2d3436;
+    width: 100px;
+    height: 570px;
+    margin: 0%;
+    margin-top: 165px;
+    top: 0%;
+    left: 345px;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+} */
+.bottomRoad{
+    background-color: #2d3436;
+    width: 845px;
+    height: 90px;
+    /* transform: rotate(90deg); */
+    margin: 0%;
+    /* margin-top: 165px; */
+    margin-top: 5px;
+    left: 0%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+    /* background-image: url('./road1.png');
+    background-size: contain; */
+}
+/* #road {
+    background-color: #2d3436;
+    width: 100px;
+    height: 570px;
+    margin: 0%;
+    /* margin-top: 165px; */
+        /* top: 0%;
+        left: 345px;
+        overflow: hidden;
+        position: relative;
+        z-index: 3;
+    }  */
+.topRoad{
+    background-color: #2d3436;
+    width: 840px;
+    height: 90px; 
+    right:0%;
+    overflow: hidden;
+    
+    position: fixed;
+    top: 70px;
+    z-index: 3;
+}
+.rightBoundry{
+    background-color: white;
+    position: absolute;
+    width: 10px;
+    height: 70px;
+    /* margin-left: 390px; */
+    right: 0px;
+    
+}
+.leftBoundry{
+    background-color: #d7dfdf ;
+    position: absolute;
+    width: 10px;
+    height: 70px;
+    
+    
+}
+.topBoundry{
+    background-color:  white;
+    position: absolute;
+    width: 70px;
+    height: 10px;
+    
+    
+}
+.bottomBoundry{
+    background-color:  rgb(255, 255, 255);
+    position: absolute;
+    width: 70px;
+    height: 10px;
+    /* margin-top: 390px; */
+    bottom: 0px;
+    
+}
+.obstacle
+{
+    background-color: cadetblue;
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-image: url("../IMAGE/obstical.png");
+    background-size: cover;
+    /* top: 20px; */
+    z-index: 3;
+    border-radius: 14px 14px;
+}
+
+
+ .welcome{
+    
+    /* margin: 0%; */
+    /* margin-top: 50px; */
+    top: 90px;
+    margin-left: 950px;
+    color: aliceblue;
+   
+    font-size: 1.5em;
+    
+    
+} 
+
+.car
+{
+    position: absolute;
+    /* background-color: blanchedalmond; */
+    width: 40px;
+    height: 85px;
+    background-size: cover;
+    background-position: center;
+
+}
+@keyframes upsideHide {
+    0.0%{
+        display: none;
+    }
+    24.9%{
+        transform: translate(0px,-450px) rotate(90deg);
+    }
+    26.7%{
+        opacity: 0;
+    }
+    43.7%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes downsideHide {
+    0.0%{
+    }
+    24.9%{
+        transform: translate(0px,250px) rotate(90deg);
+        
+       
+    }
+    26.7%{
+        opacity: 0;
+    }
+    43.7%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes leftsideHide {
+    0.0%{
+       
+    }
+    100%{
+        opacity: 0;
+    }
+    25.2%{
+        transform: translate(-750px,0px);
+    }
+    27.1%{
+        opacity: 0;
+    }
+}
+
+@keyframes rightsideHide {
+    0.0%{
+    }
+    100%{
+        opacity: 0;
+    }
+    25.2%{
+        transform: translate(450px,0px);
+        transform-origin: 0;
+    }
+    27.1%{
+        opacity: 0;
+    }
+}
+
+/* thundet Effect  */
+.car:hover{
+    animation: thunder 1s infinite linear;
+    font-size: 100px;
+    border-radius: 10px;
+}
+
+@keyframes thunder{
+    0%{
+    }
+    50%{
+        background-color: blue;
+    }
+    70%{
+        background-color: beige;
+        /* text-shadow: 0 0 13px #FF0000, 0 0 15px #0000FF; */
+    }
+}
+#gameover {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    z-index: 999;
+    margin: auto;
+    /* margin-left: 39%;
+    margin-top: 23%; */
+    color: black;
+    /* font-weight: 90px//; */
+    font-size:60px;
+    border-radius: 20px 20px;
+    text-align: center;
+    position: fixed;
+    top: 40%;
+    left: 35%;
+
+    text-decoration: none;
+    
+}
+
+
+
+@media screen and (max-width:400px)
+{
+
+    .startScreen{
+     
+    height: 80px;
+    font: italic small-caps bold 16px/2 cursive;
+    color:wheat;
+    text-align: center;
+    justify-content: center;
+   
+     
+   
+    }
+    #message{
+
+        font: italic small-caps bold 16px/2 cursive;
+        top: 90px;
+        margin-left: 990px;
+        text-shadow: 5px 5px 10px #e09797;
+        font-size: 0.5em;
+    }
+    p{
+        color: wheat;
+    }
+    h3{
+        
+        color:wheat;
+        font-style: italic;
+    
+
+
+
+    }
+    body{
+        /* margin-right: 40px; */
+        overflow: hidden;
+        /* background-image: url(./tumblr_inline_mw5iqkPFmO1qz62bd540.gif); */
+        background-image: url(../IMAGE/background.jpeg);
+        background-size: contain;
+        /* background-attachment: fixed;*/
+        background-repeat: no-repeat;
+    }
+    
+    #style{
+        
+        width: 300px;
+    }
+    #style1{
+        margin-right: 10px;
+        width: 100px;
+    
+    
+    }
+
+    .hide{ display: none;}
+    .moves
+    {
+    
+
+        position: fixed;
+        width: 200px;
+        top: 0px;
+        /* right: 10px; */
+        left: 500px;                                                                                                                                            
+        widows: 300px;
+        height: 40px;
+        text-align: center;
+        color: white;
+        font-size: 1.5em;
+        font-family: fantasy;
+        
+        
+
+
+    }
+    .game{
+        width: 400px;
+        height: 400px;
+        background-color: #7B7D7D;
+        margin:auto;
+        /* padding-right: 0%; */
+        margin-top: 50px;
+        position:relative;
+        
+        
+    }
+
+    /* .leftRoad{
+        background-color: #2d3436;
+        width: 100px;
+        height: 570px;
+        margin: 0%;
+        margin-top: 165px;
+        top: 0%;
+        left: 345px;
+        overflow: hidden;
+        position: relative;
+        z-index: 3;
+    } */
+    .bottomRoad{
+        background-color: #2d3436;
+        width: 10px;
+        height: 90px;
+        /* transform: rotate(90deg); */
+        margin: 0%;
+        /* margin-top: 165px; */
+        margin-top: 5px;
+        left: 0%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 3;
+        /* background-image: url('./road1.png');
+        background-size: contain; */
+    }
+    /* #road {
+        background-color: #2d3436;
+        width: 100px;
+        height: 570px;
+        margin: 0%;
+        /* margin-top: 165px; */
+            /* top: 0%;
+            left: 345px;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+        }  */
+    .topRoad{
+        background-color: #2d3436;
+        width: 840px;
+        height: 90px; 
+        right:0%;
+        overflow: hidden;
+        
+        position: fixed;
+        top: 70px;
+        z-index: 3;
+    }
+    .rightBoundry{
+        background-color: white;
+        position: absolute;
+        width: 10px;
+        height: 70px;
+        /* margin-left: 390px; */
+        right: 0px;
+        
+    }
+    .leftBoundry{
+        background-color: #d7dfdf ;
+        position: absolute;
+        width: 10px;
+        height: 70px;
+        
+        
+    }
+    .topBoundry{
+        background-color:  white;
+        position: absolute;
+        width: 70px;
+        height: 10px;
+        
+        
+    }
+    .bottomBoundry{
+        background-color:  rgb(255, 255, 255);
+        position: absolute;
+        width: 70px;
+        height: 10px;
+        /* margin-top: 390px; */
+        bottom: 0px;
+        
+    }
+    .obstacle
+    {
+        background-color: cadetblue;
+        position: absolute;
+        width: 40px;
+        height: 60px;
+        background-image: url("../IMAGE/obstical.png");
+        background-size: cover;
+        /* top: 20px; */
+        z-index: 3;
+        border-radius: 14px 14px;
+    }
+
+
+    .welcome{
+        
+        /* margin: 0%; */
+        /* margin-top: 50px; */
+        top: 90px;
+        margin-left: 950px;
+        color: aliceblue;
+    
+        font-size: 1.5em;
+        
+        
+    } 
+
+    .car
+    {
+        position: absolute;
+        /* background-color: blanchedalmond; */
+        width: 40px;
+        height: 85px;
+        background-size: cover;
+        background-position: center;
+
+    }
+    @keyframes upsideHide {
+        0.0%{
+            display: none;
+        }
+        24.9%{
+            transform: translate(0px,-450px) rotate(90deg);
+        }
+        26.7%{
+            opacity: 0;
+        }
+        43.7%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+
+    @keyframes downsideHide {
+        0.0%{
+        }
+        24.9%{
+            transform: translate(0px,250px) rotate(90deg);
+            
+        
+        }
+        26.7%{
+            opacity: 0;
+        }
+        43.7%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0;
+            display: none;
+        }
+    }
+    @keyframes leftsideHide {
+        0.0%{
+        
+        }
+        100%{
+            opacity: 0;
+        }
+        25.2%{
+            transform: translate(-750px,0px);
+        }
+        27.1%{
+            opacity: 0;
+        }
+    }
+
+    @keyframes rightsideHide {
+        0.0%{
+        }
+        100%{
+            opacity: 0;
+        }
+        25.2%{
+            transform: translate(450px,0px);
+            transform-origin: 0;
+        }
+        27.1%{
+            opacity: 0;
+        }
+    }
+
+    /* thundet Effect  */
+    .car:hover{
+        animation: thunder 1s infinite linear;
+        font-size: 100px;
+        border-radius: 10px;
+    }
+
+    @keyframes thunder{
+        0%{
+        }
+        50%{
+            background-color: blue;
+        }
+        70%{
+            background-color: beige;
+            /* text-shadow: 0 0 13px #FF0000, 0 0 15px #0000FF; */
+        }
+    }
+    #gameover {
+        width: 300px;
+        height: 200px;
+        background-color: white;
+        z-index: 999;
+        margin: auto;
+        /* margin-left: 39%;
+        margin-top: 23%; */
+        color: black;
+        /* font-weight: 90px//; */
+        font-size:60px;
+        border-radius: 20px 20px;
+        text-align: center;
+        position: fixed;
+        top: 40%;
+        left: 35%;
+
+        text-decoration: none;
+        
+    }
+}

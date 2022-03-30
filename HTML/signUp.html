@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="    viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/JS/functional.js"></script>
+
+  <link rel="stylesheet" href="/CSS/signUp.css">
+  <link rel="stylesheet" href="/CSS/navbar.css">
+
+  <title>Login System</title>
+</head>
+
+<body>
+
+  <div class ="wrap">
+    <ul class="navbar">
+      <li><a href=".index.html">Home</a></li>
+      <li><a href="./HTML/signUp.html">Register</a></li>
+      <li><a href="./signIn.html">Login</a></li>
+      <li><a href="/HTML/main.html">Guest</a></li>
+      <li><a href="./HTML/about.html">About</a></li>
+    </ul>
+
+</div>
+
+<center><h1><span id="message" style="color: red"></span></h1></center>
+
+ 
+  <div id="login-box">
+    <div class="box">
+
+      <h1 id='status'><b><u>Register Form</u></b></h1>
+      <input type="text" id="username" name="username" placeholder="username" />
+      <input type="text" id="email" name="email" placeholder="E-mail" />
+      <input type="password" id="password" name="password" placeholder="Password" />
+      <button onclick="signUp()" id="signUp">Register</button>
+      <br><br>
+
+      <p>Please login to your account</p>
+      <a href="/HTML/signIn.html">
+      <button type="button" class="btn btn-danger">Login</button><br>
+    </a>
+    <small><span id="myerror" style="color: red"></span></small>
+
+
+    </div>
+
+
+  </div>
+
+
+
+</body>
+<script type="module">
+
+  // ---------------------------Import the functions you need from the SDKs you need-------------------
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyBjUiOBZbSlTmqL2SxIab5KBaQdihkHcyI",
+    authDomain: "login-page-6431a.firebaseapp.com",
+    databaseURL: "https://login-page-6431a-default-rtdb.firebaseio.com",
+    projectId: "login-page-6431a",
+    storageBucket: "login-page-6431a.appspot.com",
+    messagingSenderId: "534588316511",
+    appId: "1:534588316511:web:fa8755876986a4a271f4ea"
+  };
+
+  //--------------------------------Initialize Firebase-----------------------------------------------
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+  signUp.addEventListener('click', (e) => {
+
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var username = document.getElementById('username').value;
+
+    localStorage.setItem("UserName",username);
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        let gameUniqueId = username;
+
+        var id = set(ref(database, 'users/' + username), {
+          username: username,
+          email: email,
+          moves: 0
+          // password:password
+        })
+
+        console.log(id);
+
+        // alert('user created!');
+        document.getElementById("message").innerHTML="User created!";
+
+        // ...
+      })
+      
+      .catch((error)=>{
+    console.log(error.message);  
+    document.getElementById("myerror").innerHTML=error.message;
+  });
+
+
+  });
+
+  //--------------------------------------------signOut------------------------------------------------
+
+  function signOut() {
+    auth.signOut();
+    alert("SignOut Successfully from System");
+  }
+
+
+  //----------------------------------------active user to homepage-----------------------------------
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      var email = user.email;
+      alert("Active user " + email);
+    } else {
+      alert("No Active user Found")
+    }
+  })
+</script>
+
+
+
+
+
+</html>
